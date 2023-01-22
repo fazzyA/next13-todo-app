@@ -1,27 +1,11 @@
-import React from 'react'
-interface TodoType {
-    id: number;
-    todo: string;
-    completed: boolean;
-    userId: number;
-  }
-  interface TodosProp {
-    todos: TodoType[];
-}
+import React from "react";
 
-export default async function TodoList({todos}: TodosProp) {
-    console.log("🚀 ~ file: todo-list.tsx:14 ~ TodoList ~ todos", todos)
+const TodoList = (props: any) => {
+  return (
+    <div className="TodoList-container">
+      <ul className="TodoList">{props.children}</ul>
+    </div>
+  );
+};
 
-    return (
-      <div>
-        <ul style={{ listStyleType: "none", padding: 0 }}>
-          {todos.map((t: TodoType) => {
-            return (
-              <li key={t.id} style={{ padding: "5px 0" }}>
-                {t.todo}
-              </li>
-            );
-          })}
-        </ul>
-      </div>  );
-}
+export default TodoList;

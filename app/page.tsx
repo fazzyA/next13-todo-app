@@ -1,20 +1,17 @@
-import React from 'react'
-import AddTodo from './add-todo'
-import TodoList from './todo-list'
+import TodoApp from './todoapp';
+import "../public/style.css";
 
 const getTodos = async () => {
   let todos = await fetch("https://dummyjson.com/todos");
   return todos.json();
 };
 
-export default async function page() {
+export default async function Page() {
   const { todos } = await getTodos();
+  // const [todos, settodos] = useState([{id:1, todo:"hello"}])
   return (
-    <div>
-      <div><AddTodo /></div>
-      <div>
-        <TodoList todos={todos} />
-      </div>
+    <div className="App-container">
+      <TodoApp />
     </div>
   )
 }

@@ -1,30 +1,29 @@
-"use client";
-import { useState } from "react";
+import React from "react";
 
-async function addTodo(todo: string) {
-    fetch('https://dummyjson.com/todos/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          todo,
-          completed: false,
-          userId: 5,
-        })
-      })  
-  }
-export default function AddTodo() {
-    let [todo, settodo] = useState("");
-    const handleSubmit = async () => {
-        await addTodo(todo);
-        settodo("");
-    }
+const TodoForm = (props) => {
   return (
-    <div>
-        <input 
-            type="text"
-            onChange={(e) => settodo(e.target.value)}
-            value={todo}/>
-        <button onClick={handleSubmit}>Add</button>
+    <div className="TodoForm-container">
+      <form className="TodoForm" onSubmit={props.onSubmit}>
+        <input
+          className="form-input"
+          type="text"
+          placeholder="Add a task..."
+          value={props.value}
+          onChange={props.onChange}
+          ref={props.reference}
+          required
+        />
+        <div className="btn-container">
+          <button className="form-btn" type="submit">
+            {!props.isEditing ? "Add a task" : "Edit Task"}
+          </button>
+          <button className="form-btn" type="button" onFocus={props.onClick}>
+            {!props.isEditing ? "Clear tasks" : "Cancel"}
+          </button>
+        </div>
+      </form>
     </div>
-)
-}
+  );
+};
+
+export default TodoForm;
