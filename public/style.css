@@ -1,19 +1,21 @@
+
 body {
     height: 100vh;
+    margin: 30px;
     font: 22px Fredoka One;
     line-height: 1.2em;
-    background: #c5d7bd;
+    background: #d9fcca;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   h1 {
-    text-align: center;
+    text-align: start;
     font-family: Fredoka One;
   }
-  
+
   .App-container {
-    width: 95%;
+    width: 90%;
     min-height: 65vh;
     background-color: #fff;
     box-shadow: 0 20px 80px #5b6d5b;
@@ -29,10 +31,12 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   input {
     width: 250px;
-    border: 1px solid #6e7c7c;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #2850ef;
     font-family: lato;
   }
   .ToDo-List {
@@ -60,9 +64,10 @@ body {
     font-family: Lato;
   }
   button {
-    background-color: #c5d7bd;
+    background-color: #3e9e15;
     border: 2px solid #c5d7bd;
-    color: #435560;
+    border-radius: 6px;
+    color: #ffffff;
     font-size: 0.75rem;
     padding: 5px 10px;
     font-weight: bold;

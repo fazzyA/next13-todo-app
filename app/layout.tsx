@@ -1,4 +1,6 @@
 import './globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 
 export default function RootLayout({
   children,
@@ -13,7 +15,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <h1>To do App with Next 13</h1>
+        <h1 className='fw-bold flex-sm-row '>To do App with Next 13</h1>
         {children}
         </body>
     </html>

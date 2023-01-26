@@ -1,5 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { AiOutlineDelete, AiOutlineEdit, AiOutlineCheckSquare } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
 import TodoForm from "./add-todo";
@@ -112,27 +115,30 @@ const TodoApp = () => {
       >
         {task.title}
         <div>
-          <button
+          <Button
             title="Delete"
-            className="btn"
+            variant="link"
+            className="border rounded "
             onClick={() => handleDelete(task.id)}
           >
-            <i className="fas fa-trash-alt" />
-          </button>
-          <button
+           <AiOutlineDelete fill="red" />
+          </Button>
+          <Button
             title="Edit"
-            className="btn"
+            variant="link"
+            className="border rounded "
             onClick={() => handleEdit(task.id)}
           >
-            <i className="fas fa-pen-fancy" />
-          </button>
-          <button
+            <AiOutlineEdit fill="blue"  />
+          </Button>
+          <Button
             title="Complete"
-            className="btn"
+            variant="link"
+            className="border rounded "
             onClick={() => handleCheck(task.title, task.id)}
           >
-            <i className="fas fa-check" />
-          </button>
+            <AiOutlineCheckSquare fill="green" />
+          </Button>
         </div>
       </li>
     );
@@ -154,7 +160,7 @@ const TodoApp = () => {
           ) : (
             <span className="no-task">
               <i className="fas fa-tasks" />
-              <span className="no-task-p">Add tasks above</span>
+              <span className="no-task-p">Add Tasks</span>
             </span>
           )}
         </TodoList>
